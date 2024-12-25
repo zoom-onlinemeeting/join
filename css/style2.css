@@ -1,0 +1,95 @@
+/* Global Styles for Page 2 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #0078D4;
+    color: #fff;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+#joinBtn {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+#joinBtn:hover {
+    background-color: #218838;
+}
+
+/* Welcome Section */
+.welcome_message {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.welcome_message h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.welcome_message p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Online Users Section */
+.online_users {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.user_list {
+    display: flex;
+    gap: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_status.online {
+    color: green;
+    font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+    background-color: #0078D4;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}

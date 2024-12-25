@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  
+    <title>Zoom-Call-Group-Meeting</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <!-- Navigation top section -->
+        <div class="nav-top" style="display: flex; justify-content: flex-end; align-items: center; background-color: #001f3d; padding: 10px 20px; font-weight: 300;">
+          <span id="mobile_menu" style="color: white; font-size: 24px; margin-right: 10px; font-weight: 300;">☰</span>
+        
+          <!-- Left side content -->
+          <ul class="nav-left" style="display: flex; align-items: center; list-style: none; margin: 0; padding: 0; color: white; font-weight: 300;">
+            <li style="margin-right: 5px;">
+              <span style="display: flex; align-items: center; color: white;">
+                <!-- Inline SVG for search icon -->
+                <svg id="search_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>search
+              </span>
+            </li>
+            <li style="margin-right: 5px;">
+              <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Support</a>
+            </li>
+            <li style="margin-right: 5px;">
+              <a href="/" style="color: white; text-decoration: none; font-weight: 300;">1.848.769.9646</a>
+            </li>
+            <li style="margin-right: 5px;">
+              <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Request a Demo</a>
+            </li>
+          </ul>
+        
+          <!-- Right side content -->
+          <ul class="nav-right" style="display: flex; align-items: center; list-style: none; margin: 0; padding: 0; color: white; font-weight: 300;">
+            <li style="margin-right: 1px;">
+              <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Join</a>
+            </li>
+            <li style="margin-right: 1px; color: white; font-weight: 300;">|</li>
+            <li id="host-container" style="display: flex; align-items: center; color: white; font-weight: 300;">
+              Host
+              <!-- Inline SVG for arrow down -->
+              <svg id="host_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16" style="margin-left: 5px;">
+                <path d="M1.5 5.5l6 6 6-6" />
+              </svg>
+            </li>
+            <li>
+              <a href="/" style="color: white; text-decoration: none; font-weight: 300; margin-left: 0;" >Sign In</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navigation main section (white background) -->
+        <div class="nav-main" style="display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 20px 40px; box-sizing: border-box;">
+          <div class="logo-container" style="display: flex; align-items: center;">
+            <img id="zoom-img" src="img/logo.svg" alt="Logo" style="height: 40px; width: 100px; margin-right: 20px;" />
+            <span style="display: flex; gap: 20px;">
+              <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Products</a>
+              <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Solutions</a>
+              <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Resources</a>
+              <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Plans & Pricing</a>
+            </span>
+          </div>
+          
+          <div class="cta-container" style="display: flex; align-items: center; gap: 20px;">
+            <a id="contact-sales" href="/" style="color: #007bff; background-color: white; border: 2px solid #007bff; padding: 10px 20px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; font-family: 'Arial', sans-serif;">
+              Contact Sales
+            </a>
+            <a id="sign-up" href="/" style="color: white; background-color: #007bff; padding: 10px 20px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; font-family: 'Arial', sans-serif;">
+              Sign Up Free
+            </a>
+          </div>
+        </div>
+        
+        <!-- Add media queries for mobile responsiveness -->
+        <style>
+          @media screen and (max-width: 768px) {
+            .nav-main {
+              flex-direction: column;
+              align-items: center;
+              padding: 10px;
+            }
+        
+            .logo-container {
+              flex-direction: column;
+              align-items: center;
+              margin-bottom: 10px;
+            }
+        
+            .logo-container img {
+              height: 40px;
+              margin-bottom: 10px;
+            }
+        
+            .logo-container span {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 10px;
+            }
+        
+            .cta-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 15px;
+            }
+        
+            .cta-container a {
+              padding: 10px 20px;
+              font-size: 16px;
+            }
+          }
+        
+          @media screen and (max-width: 480px) {
+            .cta-container a {
+              padding: 8px 16px;
+              font-size: 14px;
+            }
+        
+            .logo-container img {
+              height: 35px;
+            }
+          }
+        </style>
+      </nav>
+
+      <hr class="nav-divider" />
+      <section class="link-container">
+        <h1>Book Your Meeting Here</h1>
+        <br>
+        <div class="link-inputs">
+
+            <section class="input-field">
+                <p>Company Name:</p>
+                <input id="company_name" type="text" placeholder="Enter Company Name" />
+            </section>
+            <section class="input-field">
+                <p>Email:</p>
+                <input id="company_email" type="text" placeholder="Enter Company Email" />
+            </section>
+            <button id="book-btn" style="width:100%; value="Book Meeting">Book Meeting</button>
+        </div>
+    
+        <div class="link-copy">
+            <p><b>Link Generated:</b></p>
+            <div id="generate-link"></div>
+            <p></p>
+            <button id="copy-btn">
+                <img src="https://img.icons8.com/ios/50/000000/copy.png" alt="Copy Icon"> Copy meeting link
+            </button>
+        </div>
+    </section>
+    
+    <script>
+        // Function to generate a meeting link
+        document.getElementById("book-btn").addEventListener("click", function() {
+            var companyName = document.getElementById("company_name").value.trim();
+            var companyEmail = document.getElementById("company_email").value.trim();
+    
+            // Validate input fields
+            if (!companyName || !companyEmail) {
+                alert("Please fill in both the Company Name and Email.");
+                return;
+            }
+    
+            // Simple email validation (for browsers that may not support the email input type)
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(companyEmail)) {
+                alert("Please enter a valid email.");
+                return;
+            }
+    
+            // Generate a meeting link with company name and email as query parameters
+            var meetingLink = 'meeting.html?company=' + encodeURIComponent(companyName) + '&email=' + encodeURIComponent(companyEmail);
+    
+            // Display the generated link
+            document.getElementById("generate-link").innerHTML = '<a href="' + meetingLink + '" target="_blank">' + meetingLink + '</a>';
+        });
+    
+        // Function to copy the generated link to clipboard
+        document.getElementById("copy-btn").addEventListener("click", function() {
+            var generatedLink = document.getElementById("generate-link").innerText;
+    
+            if (!generatedLink) {
+                alert("No link to copy!");
+                return;
+            }
+    
+            // Create a temporary input to copy the link to clipboard
+            var tempInput = document.createElement("input");
+            tempInput.value = generatedLink;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+    
+            alert("Meeting link copied to clipboard!");
+        });
+    </script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+  </body>
+</html>

@@ -1,0 +1,419 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
+header {
+  background-color: #ffffff; /* White background for header */
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-top ul {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-top ul li {
+  font-size: 1rem;
+}
+
+.nav-top ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-top ul li a:hover {
+  color: #0061f2;
+}
+
+.top-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.top-right a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.top-right .contact-sales {
+  background-color: transparent;
+  border: 2px solid #0061f2;
+}
+
+.top-right .contact-sales:hover {
+  background-color: #0061f2;
+  color: #ffffff;
+}
+
+.top-right .sign-up {
+  background-color: #0061f2;
+  color: #ffffff;
+}
+
+.top-right .sign-up:hover {
+  background-color: #004bb5;
+  color: #ffffff;
+}
+
+/* Main Section */
+.main-section {
+  padding: 50px 20px;
+}
+
+.link-container {
+  background-color: #ffffff;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-top: 0;
+  padding-top: 60px;
+}
+.nav-divider {
+  border-top: 1px solid #ddd;
+  /* Adjust color and thickness if needed */
+  margin: 0;
+}
+
+.link-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-field p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-field input {
+  padding: 12px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 50px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border 0.3s ease;
+}
+
+.input-field input:focus {
+  border-color: #0061f2;
+}
+
+/* Book Meeting Button */
+button {
+  background-color: #0061f2;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #004bb5;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Copy Button */
+#copy-btn {
+  background-color: transparent;
+  color: #0061f2;
+  border: 2px solid #0061f2;
+  padding: 12px 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#copy-btn img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+#copy-btn:hover {
+  background-color: #0061f2;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Copy Link Section */
+.link-copy {
+  margin-top: 30px;
+}
+
+.link-copy p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-top ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .link-inputs {
+    width: 90%;
+  }
+
+  .link-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .input-field input {
+    width: 90%;
+  }
+}
+/* Navigation Styling */
+nav {
+  width: 100%;
+  background-color: #fff; /* White background for the header */
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Top Navigation Section */
+.nav-top {
+  display: flex;
+  justify-content: flex-end; /* Align everything to the right */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #001f3d; /* Navy blue background for the top section */
+  color: white; /* White text color for this section */
+}
+
+.nav-left, .nav-right {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-left li, .nav-right li {
+  display: inline;
+}
+
+.nav-left a, .nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#search_svg {
+  margin-right: 10px;
+  position: relative;
+  top: 2px; /* Adjusted position for alignment */
+}
+
+#nav_input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 200px;
+  font-size: 14px;
+  margin-right: 20px; /* Adjust spacing after search input */
+}
+
+#mobile_menu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Main Navigation Section */
+.nav-main {
+  background-color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: none;
+  margin-top: 10px; /* Added space before the logo */
+  padding-left: 40px; /* Added left padding to avoid logo being too close to container */
+}
+
+/* Logo Container */
+.nav-main .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Added gap between logo and links */
+}
+
+.nav-main .logo-container img {
+  height: 40px; /* Professional logo size */
+  margin-right: 20px; /* Added space after logo */
+}
+
+.nav-main .logo-container span {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+/* CTA Container (Buttons) */
+.nav-main .cta-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Button Styling (same as Book Meeting and Copy Link) */
+.nav-main .cta-container a {
+  padding: 10px 25px; /* Consistent button padding */
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: 1px solid #007bff; /* Same blue border */
+}
+
+/* Contact Sales Button - Outlined with Blue */
+.nav-main .cta-container a#contact-sales {
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+/* Sign Up Button - Blue with White Text */
+.nav-main .cta-container a#sign-up {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+/* Host and Other Navigation items (Top most section) */
+.nav-top a {
+  color: white;
+  font-size: 14px;
+}
+
+/* Section separating items before Join */
+.nav-top .separator {
+  border-right: 1px solid white;
+  margin: 0 20px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  #mobile_menu {
+    display: block;
+  }
+
+  .nav-left, .nav-right {
+    display: none;
+  }
+
+  .nav-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-main .logo-container {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .nav-main .cta-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .nav-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-left a, .nav-right a {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  #nav_input {
+    width: 80%;
+    margin-top: 10px;
+  }
+}

